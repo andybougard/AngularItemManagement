@@ -1,3 +1,14 @@
-<p>
-  ItemList works!
-</p>
+<form [formGroup]="form">
+  <label for="ItemInput">Add Item:</label>
+  <input formControlName="itemControl" type="text" id="ItemInput" />
+  <button (click)="addToList()" [disabled]="!form.get('itemControl')?.valid">Save</button>
+  <div *ngIf="form.get('itemControl')?.hasError('valueExists')">
+    The value already exists
+  </div>
+  <div *ngIf="form.get('itemControl')?.hasError('notEmptyString')">
+    Please enter a value
+  </div>
+  <ul id="itemsList">
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+</form>
