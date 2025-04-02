@@ -35,7 +35,7 @@ export class ItemListComponent {
       if (typeof control.value === 'string' && control.value.trim() === '') {
         return { notEmptyString: true };
       }
-      if (currentItems.includes(control.value)) {
+      if (currentItems.includes(control.value.trim())) {
         return { valueExists: true };
       }
       return null;

@@ -1,5 +1,5 @@
 <div class="flexBox">
-  <mat-card>
+  <mat-card class="card">
     <mat-card-content>
       <form [formGroup]="form">
         <mat-form-field>
@@ -14,15 +14,17 @@
         </mat-form-field>
       </form>
     </mat-card-content>
-    <mat-card-actions>
-      <div class="formActions">
-        <button mat-raised-button (click)="addToList()" [disabled]="!form.get('itemControl')?.valid">Save</button>
+    <mat-card-actions class="formActions">
+      <div>
+        <button mat-raised-button (click)="addToList()" [disabled]="!form.get('itemControl')?.valid">Add</button>
       </div>
     </mat-card-actions>
   </mat-card>
 </div>
-<mat-card *ngIf="items.length > 0">
-  <mat-list id="itemsList">
-    <mat-list-item *ngFor="let item of items">{{ item }}</mat-list-item>
-  </mat-list>
-</mat-card>
+<div class="flexBox">
+  <mat-card *ngIf="items.length > 0" class="card">
+    <mat-list id="itemsList">
+      <mat-list-item *ngFor="let item of items">{{ item }}</mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>

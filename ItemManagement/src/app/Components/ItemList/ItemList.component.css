@@ -1,11 +1,17 @@
 .flexBox {
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+    flex-direction: row;
+    align-content: end; /*Y axis (when direction is row)*/
+    justify-content: center; /*X axis*/
     padding: 20px 0px;
 }
 
 .formActions {
-    align-items: end;
+    display: flex;
+    justify-content: end;
+}
+
+.card {
+    min-width: 60%;
 }
