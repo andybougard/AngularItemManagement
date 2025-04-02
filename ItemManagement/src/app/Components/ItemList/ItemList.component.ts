@@ -47,6 +47,7 @@ export class ItemListComponent {
     if(this.form.get('itemControl')?.valid) {
       this.items.push(this.form.controls["itemControl"].value);
       this.form.get('itemControl')?.setValue('');
+      this.form.get('itemControl')?.markAsUntouched();
     }
   }
 }
